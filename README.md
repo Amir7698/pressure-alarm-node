@@ -80,7 +80,13 @@ bar  = (mA - 4) * 10 / 16          (0-10 bar transmitter)
 
 ## Results on the board
 
-USART2, 115200 8N1, ST-LINK virtual COM port. Recorded on the bench:
+USART2, 115200 8N1, ST-LINK virtual COM port. One line per second: time, pressure, loop current, state, buzzer, and the scenario step in brackets.
+
+![UART log in PuTTY: sensor fault, recovery, LOW alarm after 2 s, hysteresis holding LOW at 3.3 bar, clearing at 3.6 bar](docs/uart-alarm.png)
+
+In this capture: the wire-broken fault clears about 2 s after the signal comes back (t=213), 3.0 bar raises `LOW` about 2 s after the step (t=217), 3.3 bar keeps it `LOW` because of the hysteresis, and 3.6 bar clears it about 2 s after the step (t=227).
+
+An earlier run, with the button pressed during `LOW`:
 
 ```text
 t=5946s   0.00 bar  NORMAL       buzzer=0  [wire broken]

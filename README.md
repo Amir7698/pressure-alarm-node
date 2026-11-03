@@ -1,5 +1,7 @@
 # pressure-alarm-node
 
+[![tests](https://github.com/Amir7698/pressure-alarm-node/actions/workflows/tests.yml/badge.svg)](https://github.com/Amir7698/pressure-alarm-node/actions/workflows/tests.yml)
+
 STM32 firmware for a small monitoring node, like the ones used on medical and industrial gas lines: it reads line pressure from a 4–20 mA transmitter, detects sensor faults, and raises alarms with delay, hysteresis and a silence button.
 
 Hardware: NUCLEO-F446RE (Cortex-M4F, 84 MHz). The pressure transmitter is simulated on the board itself (DAC → jumper → ADC).

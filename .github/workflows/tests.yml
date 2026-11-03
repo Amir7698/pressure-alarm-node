@@ -1,0 +1,17 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pc-unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and run the alarm unit tests on the PC
+        run: |
+          mkdir -p build
+          gcc -std=c99 -Wall -Wextra -Werror -Icore/include \
+              core/src/alarm.c tests/test_alarm.c -o build/test_alarm
+          ./build/test_alarm

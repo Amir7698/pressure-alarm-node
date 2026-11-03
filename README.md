@@ -6,6 +6,10 @@ STM32 firmware for a small monitoring node, like the ones used on medical and in
 
 Hardware: NUCLEO-F446RE (Cortex-M4F, 84 MHz). The pressure transmitter is simulated on the board itself (DAC → jumper → ADC).
 
+<img src="docs/bench.jpg" alt="NUCLEO-F446RE on the bench with a jumper from A2 to A0" width="420">
+
+*The board on the bench. The green jumper (bottom left) carries the DAC output on A2 to the ADC input on A0 and stands in for the 4–20 mA transmitter.*
+
 ## Status (v1)
 
 | Step | What it does | Status |
